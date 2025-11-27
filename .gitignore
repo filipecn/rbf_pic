@@ -1,22 +1,36 @@
-# Add any directories, files, or patterns you don't want to be tracked by version control
-gltool/CMakeDependencies.txt
-log/
-hip/
-results/
-build/
-build6/
-.vs/
-.vs*
-wbuild/
-bazel-*
-gltool/external/
-external/
-.gitmodules
-.ycm*
-.travis*
-cmake-build-debug/
-.idea/
-*pyc
-*.fuse*
-# Mac-specific
-.DS_Store
+build
+.cache
+*linux*
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app

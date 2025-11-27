@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description"
+          content="RBF Liquids: An Adaptive PIC Solver Using RBF-FD.">
+    <meta name="keywords" content="CFD, Animation, Simulation">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RBF Liquids: An Adaptive PIC Solver Using RBF-FD</title>
+
+    <!-- Google tag (gtag.js) 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QVHEBMNZK4"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-QVHEBMNZK4');
+    </script>
+    -->
+
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+    <link rel="icon" href="./static/images/favicon.svg">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+  </head>
+  <body>
+
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">RBF Liquids: An Adaptive PIC Solver Using RBF-FD</h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a href="https://rnakanishi.github.io/">Rafael Nakanishi</a>,</span>
+                <span class="author-block">
+                  <a href="https://filipecn.dev/">Filipe Nascimento</a>,</span>
+                <span class="author-block">
+                  <a href="https://campos.cc/">Rafael Campos</a>,</span>
+                <span class="author-block">
+                  <a href="https://www.facom.ufms.br/~pagliosa/">Paulo Pagliosa</a>,</span>
+                <span class="author-block">
+                  <a href="https://sites.google.com/icmc.usp.br/apneto/">Afonso Paiva</a>
+                </span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">ACM Transactions on Graphics - SIGGRAPH Asia 2020</span>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- PDF Link. -->
+                  <span class="link-block">
+                    <a href="./static/pdf/rbf_pic.pdf"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+                  <!-- Video Link. -->
+                  <span class="link-block">
+                    <a href="https://www.youtube.com/watch?v=JVt8NoF81uI"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-youtube"></i>
+                      </span>
+                      <span>Video</span>
+                    </a>
+                  </span>
+                  <!-- Video Link. -->
+                  <span class="link-block">
+                    <a href="https://www.youtube.com/watch?v=rKfCjhbrpj4"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-youtube"></i>
+                      </span>
+                      <span>Presentation</span>
+                    </a>
+                  <!-- Code Link. -->
+                  <span class="link-block">
+                    <a href="https://github.com/filipecn/rbf_pic"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero is-light is-small">
+      <div class="hero-body">
+        <div class="container">
+          <div id="results-carousel" class="carousel results-carousel">
+            <div class="item item-steve">
+              <img src="./static/img/teaser.png" alt="" class="center-image" style="max-width: 100%; height: auto;">
+            </div>
+            <div class="item item-chair-tp">
+              <img src="./static/img/teaser2.png" alt="" class="center-image" style="max-width: 100%; height: auto;">
+            </div>
+            <div class="item item-shiba">
+              <img src="./static/img/teaser3.png" alt="" class="center-image" style="max-width: 100%; height: auto;">
+            </div>
+            <div class="item item-fullbody">
+              <img src="./static/img/teaser4.png" alt="" class="center-image" style="max-width: 100%; height: auto;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <!-- Abstract. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <p>
+              We introduce a novel liquid simulation approach that combines a spatially adaptive pressure projection solver with the Particle-in-Cell (PIC) method. The solver relies on a generalized version of the Finite Difference (FD) method to approximate the pressure field and its gradients in tree-based grid discretizations, possibly non-graded. In our approach, FD stencils are computed by using meshfree interpolations provided by a variant of Radial Basis Function (RBF), known as RBF-Finite-Difference (RBF-FD). This meshfree version of the FD produces differentiation weights on scattered nodes with high-order accuracy. Our method adapts a quadtree/octree dynamically in a narrow-band around the liquid interface, providing an adaptive particle sampling for the PIC advection step. Furthermore, RBF affords an accurate scheme for velocity transfer between the grid and particles, keeping the system’s stability and avoiding numerical dissipation. We also present a data structure that connects the spatial subdivision of a quadtree/octree with the topology of its corresponding dual-graph. Our data structure makes the setup of stencils straightforward, allowing its updating without the need to rebuild it from scratch at each time-step. We show the effectiveness and accuracy of our solver by simulating incompressible inviscid fluids and comparing results with regular PIC-based solvers available in the literature.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--/ Abstract. -->
+        <!-- Paper video. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Video</h2>
+            <div class="publication-video">
+              <iframe width="560" height="315" src="https://www.youtube.com/watch?v=JVt8NoF81uI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+        <!--/ Paper video. -->
+        <!-- Paper video. -->
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Presentation</h2>
+            <div class="publication-video">
+              <iframe width="560" height="315" src="https://www.youtube.com/watch?v=rKfCjhbrpj4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section" id="Ack">
+      <div class="container is-max-desktop content">
+          <h2 class="title is-3">Acknowledgments</h2>
+          <div class="content has-text-justified">
+            <p>
+            We want to thank Fabrício Simeoni de Sousa and Antonio Castelo for insightful discussions throughout this work, and the SIGGRAPH Asia reviewers for their comments. We also thank Cristin Barghiel from SideFX for their kind donation of the Houdini licenses and Leonardo Martinussi for the computing infrastructure at ICMC-USP.
+
+This study was financed in part by the Coordenação de Aperfeiçoamento de Pessoal de Nível Superior - Brazil (CAPES), National Council for Scientific and Technological Development - Brazil (CNPq) fellowship #301642/2017-6, and São Paulo Research Foundation (FAPESP) under grants #2018/06145-4 and #2019/23215-9.
+
+The computational resources were provided by the <a href="https://cemeai.icmc.usp.br/">Center for Mathematical Sciences Applied to Industry (CeMEAI)</a>, also funded by FAPESP (grant #2013/07375).
+            </p>
+          </div>
+      </div>
+    </section>
+
+
+    <section class="section" id="BibTeX">
+      <div class="container is-max-desktop content">
+        <h2 class="title">BibTeX</h2>
+        <pre><code>@article{ Nakanishi2020RBF,
+  author = {Nakanishi, Rafael and Nascimento, Filipe and Campos, Rafael and 
+            Pagliosa, Paulo and Paiva, Afonso},
+  title = {{RBF Liquids: An Adaptive PIC Solver Using RBF-FD}},
+  year = {2020},
+  issue_date = {December 2020},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  volume = {39},
+  number = {6},
+  issn = {0730-0301},
+  url = {https://doi.org/10.1145/3414685.3417794},
+  doi = {10.1145/3414685.3417794},
+  journal = {ACM Trans. Graph.},
+  month = nov,
+  articleno = {170},
+  numpages = {13},
+  keywords = {radial basis function (RBF), particle-in-cell (PIC), liquid animation, adaptive grids}
+}</code></pre>
+      </div>
+    </section>
+
+
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <a class="icon-link"
+             href="mailto:filipedecn@gmail.com">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
+              <p>
+              This website is licensed under a <a rel="license"
+                                                  href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                                                  Commons Attribution-ShareAlike 4.0 International License</a>.
+                                                Original <a href="https://github.com/nerfies/nerfies.github.io">source</a> by Keunhong Park.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

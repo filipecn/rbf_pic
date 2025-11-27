@@ -1,0 +1,10 @@
+[submodule "external/googletest"]
+	path = external/googletest
+	url = https://github.com/google/googletest.git
+	ignore = dirty
+[submodule "gltool/external/ponos"]
+	path = gltool/external/ponos
+	url = https://github.com/filipecn/ponos.git
+[submodule ".\\external\\eigen"]
+	path = external/eigen
+	url = https://github.com/libigl/eigen.git
