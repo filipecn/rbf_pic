@@ -13,7 +13,7 @@ University of Sao Paulo - (ICMC-USP)
 
 </div>
 
-![alt text](https://github.com/filipecn/rbf_pic/siggraph-2020.png)
+![alt text](https://github.com/filipecn/rbf_pic/blob/main/siggraph-2020.png)
 
 ## Introduction
 
