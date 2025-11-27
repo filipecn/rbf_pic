@@ -1,0 +1,15 @@
+minLevel 4
+maxLevel 6
+outputDir pressure
+frames 4000
+dt 0.005
+particleSpacing 0.00390625
+scene NONE
+iSolidBoxes 6 6 11 5 12 50 11 5 54 6 53 5 54 50 32 7 33 64
+iFluidBoxes 6 6 12 6 32 20
+rbfRadius 0.5
+rbfKernel PHS
+base LINEAR
+adaptiveRBFRadius 0
+graded 1
+algorithm advectParticles injectParticles handleInjectors updateTree markSolids markBoundariesOnFaces particlesToFaces  addGravityToFaces divergenceOnCellsFromFaces  pressureOnCells pressureGradientOnFacesFromCells correctFaceVelocitiesFromFacePressureGradient reseedParticles propagateVelocities facesToParticles saveAllData

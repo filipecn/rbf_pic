@@ -1,0 +1,16 @@
+minLevel 4
+maxLevel 6
+outputDir glass
+frames 3000
+dt 0.005
+particleSpacing 0.0078125390625
+scene NONE
+# size pos velocity
+injectors 0.078 0.03 0.078 0.265 0.5 0.265 0 0 2 400000
+# injectorTime 0 0.0 0.15
+iSolidBoxes 6 6 6 0 0 0 23 1 23 0 23 0 23 24 12 0 23 0 12 24 23 0 0 0 23 64 1 0 0 0 1 64 23 0 63 0 64 64 64 22 0 0 23 64 23 0 0 22 23 64 23
+# iFluidBoxes 6 6 6 1 1 1 22 22 22
+rbfKernel PHS  
+base QUADRATIC
+graded 1
+algorithm advectParticles injectParticles handleInjectors updateTree markSolids reseedParticlesWithVelocities markBoundariesOnFaces particlesToFaces  addGravityToFaces divergenceOnCellsFromFaces  pressureOnCellsRing pressureGradientOnFacesFromCells correctFaceVelocitiesFromFacePressureGradient reseedParticles facesToParticlesAllComponents

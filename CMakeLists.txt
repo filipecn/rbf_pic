@@ -1,0 +1,67 @@
+project(FUROO)
+
+cmake_minimum_required(VERSION 3.1)
+set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_OUTPUT_EXTENSION_REPLACE "ON")
+
+OPTION(GUI "Compile with gltool" FALSE)
+OPTION(EXAMPLES "Build the examples" OFF)
+
+find_package(OpenMP REQUIRED)
+if (OpenMP_FOUND)
+    message("-- Found OpenMP")
+    add_definitions("-D_USE_OPENMP")
+    set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
+    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
+endif(OpenMP_FOUND)
+
+find_package(Eigen3 REQUIRED)
+if(Eigen3_FOUND)
+    message("-- Found Eigen3")
+    include_directories(${EIGEN3_INCLUDE_DIR})
+else()
+    message("-- Building local Eigen3")
+    set(EIGEN3_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/external/eigen)
+    include_directories(${EIGEN3_INCLUDE_DIR})
+endif()
+
+#IF(CMAKE_BUILD_TYPE STREQUAL "Debug")
+#    add_definitions("-DFUROO_DEBUG")
+#    add_definitions("-D_USE_OPENMP")
+#ENDIF(CMAKE_BUILD_TYPE STREQUAL "Debug")
+# include_directories(/usr/local/opt/libomp/include)
+set(RELEASE_FLAGS "-O3")
+
+if (CMAKE_COMPILER_IS_GNUCXX)
+#    set(DEBUG_FLAGS "-g -O0 -Wall  -Wextra --coverage -fopenmp")
+   set(RELEASE_FLAGS "-O3")
+#    set(CMAKE_EXE_LINKER_FLAGS "-lstdc++fs -fprofile-arcs -ftest-coverage")
+#elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "Clang")
+#    set(DEBUG_FLAGS "-g -O0 -Wall -pedantic -Xpreprocessor -fopenmp /usr/local/opt/libomp/lib/libomp.dylib")
+#    set(RELEASE_FLAGS "-O3 -Wall -pedantic -Xpreprocessor -fopenmp  /usr/local/opt/libomp/lib/libomp.dylib")
+#    set(CMAKE_EXE_LINKER_FLAGS "-fprofile-arcs -ftest-coverage")
+else (CMAKE_COMPILER_IS_GNUCXX)
+    set(DEBUG_FLAGS "/Zi /EHsc /MDd /MP /bigobj")
+    set(RELEASE_FLAGS "/EHsc")
+endif (CMAKE_COMPILER_IS_GNUCXX)
+
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+add_subdirectory(external/googletest EXCLUDE_FROM_ALL)
+include_directories(external/googletest/googletest/include)
+
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} ${DEBUG_FLAGS}")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} ${RELEASE_FLAGS}")
+
+set(FUROO_BUILD_DIR ${FUROO_PROJECT_DIR}/build)
+
+add_subdirectory(src)
+add_subdirectory(tests)
+
+if (EXAMPLES)
+#    add_subdirectory(examples)
+endif ()
+
+#if (GUI)
+#    add_subdirectory(gltool)
+#endif ()

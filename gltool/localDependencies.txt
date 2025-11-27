@@ -1,0 +1,55 @@
+set(PONOS_INCLUDES
+${FUROO_SOURCE_DIR}/external/ponos/build/include
+/usr/include/freetype2
+/usr/include/freetype2
+)
+set(PONOS_LIBRARIES
+${FUROO_SOURCE_DIR}/external/ponos/build/lib/libaergia.a
+${FUROO_SOURCE_DIR}/external/ponos/build/lib/libponos.a
+glfw3
+dl
+GL
+GLU
+GLEW
+freetype
+X11
+pthread
+)
+add_definitions(-DFONT_PATH="/home/rnakanishi/.fonts/monaco.ttf")
+# add_definitions(-DFONT_PATH="/mnt/windows/Windows/Fonts/arial.ttf")
+# add_definitions(-DFONT_PATH="C:/Windows/Fonts/arial.ttf")
+
+if(MINGW)
+
+find_package(PkgConfig)
+
+find_package(OpenGL QUIET REQUIRED)
+pkg_check_modules (GLFW QUIET glfw3)
+pkg_check_modules (FREETYPE QUIET freetype2)
+
+set(GLEW_LIB "C:/Projects/ponos/aergia/external/GLEW/x64/libglew32d.a")
+set(FREETYPE_LIB "C:/Program Files (x86)/GnuWin32/lib/libfreetype.dll.a")
+SET(GLFW_LIB C:/Projects/ponos/wbuild/external/lib/libglfw3.a)
+SET(GLFW_INCLUDE_DIRS C:/Projects/ponos/wbuild/external/include)
+
+SET(GLFW_LIB C:/Projects/furoo/external/ponos/wbuild/external/lib/libglfw3.a)
+SET(GLFW_INCLUDE_DIRS C:/Projects/furoo/external/ponos/wbuild/external/include)
+
+set(AERGIA_INCLUDES "${FREETYPE_INCLUDE}" "${GLFW_INCLUDE_DIRS}" "${GLEW_INCLUDE_DIR}" "${OPENGL_INCLUDE_DIRS}")
+set(AERGIA_LIBRARIES ${GLEW_LIB} ${GLFW_LIB} ${GLFW_STATIC_LIBRARIES} ${VULKAN_LIBRARY} ${OPENGL_LIBRARIES} ${FREETYPE_LIB} ${FREETYPE_STATIC_LIBRARIES})
+
+set(PONOS_INCLUDES
+"C:/Projects/ponos/ponos"
+"C:/Projects/ponos/aergia"
+"C:/Projects/ponos/aergia/external/GLEW"
+"C:/Projects/ponos/aergia/external"
+"C:/Program Files (x86)/freetype/include/freetype2"
+)
+set(PONOS_LIBRARIES
+    "C:/Projects/ponos/cmake-build-debug/aergia/libaergiad.a"
+    "C:/Projects/ponos/cmake-build-debug/ponos/libponosd.a"
+${GLEW_LIB} ${GLFW_LIB} ${GLFW_STATIC_LIBRARIES} ${VULKAN_LIBRARY} ${OPENGL_LIBRARIES} ${FREETYPE_LIB} ${FREETYPE_STATIC_LIBRARIES}
+opengl32
+glu32
+)
+endif(MINGW)

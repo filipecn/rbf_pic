@@ -1,0 +1,15 @@
+minLevel 4
+maxLevel 6
+outputDir injectorTime
+frames 4000
+dt 0.005
+particleSpacing 0.00390625
+scene NONE
+injectors 0.1 0.02 0.5 0.8 40000
+injectorTime 0 0.0 0.4
+iSolidBoxes 3 2 3 0 4 2 6 0 7 1
+iFluidBoxes 3 2 1 2 2 3
+rbfKernel PHS
+base LINEAR
+graded 1
+algorithm advectParticles injectParticles handleInjectors updateTree markSolids markBoundariesOnFaces particlesToFaces  addGravityToFaces divergenceOnCellsFromFaces  pressureOnCellsRing pressureGradientOnFacesFromCells correctFaceVelocitiesFromFacePressureGradient reseedParticles facesToParticlesAllComponents

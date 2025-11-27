@@ -1,0 +1,17 @@
+minLevel 3
+maxLevel 5
+outputDir gibou
+frames 900
+dt 0.015
+particleSpacing 0.0078125
+particleSpacing 0.00390625
+particleSpacing 0.015625
+particleSpacing 0.01
+scene NONE
+fluidBoxes 0.001 0.001 0.001 0.999 0.3 0.2
+rbfRadius 0.5
+rbfKernel PHS
+base LINEAR
+adaptiveRBFRadius 0
+graded 1
+algorithm advectParticles updateTree markBoundariesOnFaces particlesToCells particlesToFaces addGravityToCells addGravityToFaces divergenceOnCellsFromFacesAndCellCenter  pressureOnCells cellPressureToFacePressure pressureGradientOnFacesFromCells correctFaceVelocitiesFromFacePressureGradient reseedParticles facesToParticles saveAllData

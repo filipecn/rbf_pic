@@ -1,0 +1,16 @@
+minLevel 3
+maxLevel 5
+outputDir injector
+frames 4000
+dt 0.005
+particleSpacing 0.00390625
+scene NONE
+injectors 0.05 0.02 0.05 0.5 0.2 0.5 400000
+injectorTime 0 0.0 0.15
+# iFluidBoxes 5 5 5 0 0 0 1 2 1
+rbfRadius 0.5
+rbfKernel PHS
+base LINEAR
+adaptiveRBFRadius 0
+graded 1
+algorithm advectParticles injectParticles handleInjectors updateTree markSolids markBoundariesOnFaces particlesToCells particlesToFaces addGravityToCells addGravityToFaces divergenceOnCellsFromFacesAndCellCenter  pressureOnCells cellPressureToFacePressure pressureGradientOnFacesFromCells correctFaceVelocitiesFromFacePressureGradient reseedParticles propagateVelocities facesToParticles saveAllData

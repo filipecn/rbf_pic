@@ -1,0 +1,17 @@
+minLevel 5
+maxLevel 7
+outputDir drop2
+frames 500
+dt 0.005
+#particleSpacing 0.0078125
+particleSpacing 0.00390625
+scene NONE
+iSolidBoxes 6 6     0 0 32 1       0 0 1 64         32 0 64 64
+iFluidBoxes 6 6 1 1 32 13 2
+#iFluidBoxes 7 7 1 1 127 26 2
+iFluidSpheres 6 6 16 39 3
+#iFluidSpheres 7 7 64 80 15
+rbfKernel PHS
+base LINEAR
+graded 0
+algorithm advectParticles injectParticles handleInjectors updateTree markSolids markBoundariesOnFaces particlesToFaces  addGravityToFaces divergenceOnCellsFromFaces  pressureOnCellsRing pressureGradientOnFacesFromCells correctFaceVelocitiesFromFacePressureGradient reseedParticles facesToParticlesAllComponents

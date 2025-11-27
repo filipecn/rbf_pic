@@ -1,0 +1,14 @@
+minLevel 4
+maxLevel 6
+outputDir gibou
+frames 900
+dt 0.0166666666667
+dt 0.005
+particleSpacing 0.00390625
+scene LDB
+rbfRadius 0.5
+rbfKernel PHS
+base QUADRATIC
+adaptiveRBFRadius 0
+graded 1
+algorithm advectParticles updateTree markBoundariesOnFaces particlesToCells particlesToFaces addGravityToCells addGravityToFaces divergenceOnCellsFromFacesAndCellCenter  pressureOnCells cellPressureToFacePressure pressureGradientOnFacesFromCells  correctFaceVelocitiesFromFacePressureGradient reseedParticles facesToParticles saveAllData 

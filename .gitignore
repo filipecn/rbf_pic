@@ -1,0 +1,22 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+gltool/CMakeDependencies.txt
+log/
+hip/
+results/
+build/
+build6/
+.vs/
+.vs*
+wbuild/
+bazel-*
+gltool/external/
+external/
+.gitmodules
+.ycm*
+.travis*
+cmake-build-debug/
+.idea/
+*pyc
+*.fuse*
+# Mac-specific
+.DS_Store
