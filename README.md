@@ -9,9 +9,11 @@
 University of Sao Paulo - (ICMC-USP)
 
 
-### [Project Page](https://filipecn.github.io/psa_anim/) · [Paper](https://filipecn.github.io/psa_anim/static/pdf/psa_anim.pdf) · [Video](https://www.youtube.com/watch?v=rHvtYA-lLIk&feature=youtu.be)
+### [Project Page](https://filipecn.github.io/rbf_pic/) · [Paper](https://filipecn.github.io/rbf_pic/static/pdf/rbf_pic.pdf) · [Video](https://www.youtube.com/watch?v=JVt8NoF81uI)
 
 </div>
+
+![alt text](https://github.com/filipecn/rbf_pic/siggraph-2020.png)
 
 ## Introduction
 
